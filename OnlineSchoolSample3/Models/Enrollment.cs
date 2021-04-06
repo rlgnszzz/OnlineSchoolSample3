@@ -12,7 +12,10 @@ namespace OnlineSchoolSample3.Models
 
     public class Enrollment
     {
+        
         public int EnrollmentID { get; set; }
+
+        
         public Score? Score { get; set; }
         public int CourseID { get; set; }
         public int StudentID { get; set; }

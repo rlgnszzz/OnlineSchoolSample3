@@ -4,10 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>정보</h2>
 
 <div>
-    <h4>Student</h4>
+    <h4>수강생</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -26,9 +26,28 @@
             @Html.DisplayFor(model => model.EnrollmentDate)
         </dd>
 
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>강좌 명: </th>
+                    <th>성적 : </th>
+                </tr>
+                @foreach (var item in Model.Enrollments)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(model=>item.Course.Title)</td>
+                        <td>@Html.DisplayFor(model=>item.Score)</td>
+                    </tr>
+                    
+                }
+            </table>
+
+        </dd>
+
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("수정", "Edit", new { id = Model.StudentID }) |
+    @Html.ActionLink("목록으로", "Index")
 </p>
