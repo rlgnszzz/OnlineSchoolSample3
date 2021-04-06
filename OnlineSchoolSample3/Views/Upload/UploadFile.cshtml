@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "UploadFile";
+}
+
+<h2>과제 제출하기</h2>
+
+@using (Html.BeginForm("UploadFile", "Upload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div>
+        @Html.TextBox("file", "", new { type = "file" }) <br />
+
+        <input type="submit" value="업로드" />
+
+        @ViewBag.Message
+
+    </div>
+}
